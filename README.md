@@ -1,4 +1,4 @@
-<H3>Everything about my own Zigbee devices <i>(wiht ptvo)</i></H3>
+<H3>Everything about my own Zigbee devices <i>(with ptvo)</i></H3>
 <hr>
 <ul>
 <li>External converters <i>(for Zigbee2mqtt)</i></li>
