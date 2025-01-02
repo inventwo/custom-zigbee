@@ -1,6 +1,6 @@
 ![Logo](https://raw.githubusercontent.com/inventwo/ioBroker.vis-icontwo/refs/heads/master/www/Brands/inventwo_w.png)
 
-<H3>Alles rund um eigene Zigbee Geräte</H3>
+<H3>Alles rund um unsere eigene Zigbee Geräte</H3>
 
 ---
 
