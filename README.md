@@ -19,7 +19,7 @@ Bei Fragen und Anregungen, einfach ein Issue eröffnen.
 <H3>To-Do:</H3>
 
 <ul>
-<li>US-100 Sensor</li>
+<li>US-100 Ultrschall-Sensor</li>
 <li>...</li>
 </ul>
 
