@@ -1,26 +1,33 @@
-[![Paypal Donation](https://img.shields.io/badge/paypal-donate%20|%20spenden-green.svg)](https://www.paypal.com/donate/?hosted_button_id=7W6M3TFZ4W9LW)
+<H3>Alles rund um eigene Zigbee Geräte <i>(per PTVO)</i></H3>
 
-![Logo](https://raw.githubusercontent.com/inventwo/ioBroker.vis-icontwo/refs/heads/master/www/Brands/inventwo_w.png)
-
-<H3>Everything about our own Zigbee devices <i>(with ptvo)</i></H3>
-<hr>
+---
 
 <ul>
-<li>External converters <i>(for Zigbee2mqtt)</i></li>
-<li>Matching icons</li>
-<li>Firmware files <i>(coming soon)</i></li>
+      <li>Externe Konverter <i>(für Zigbee2mqtt)</i></li>
+      <li>Passende Icons</li>
+      <li>Firmware Dateien <i>(kommen noch)</i></li>
 </ul>
-<hr>
 
-I have currently connected several DS18B20 sensors and a wired reed contact to the CC2531 and successfully integrated them into Zigbee2mqtt.
+---
 
-If you have any questions or suggestions, just open an issue <i>(also in German - gern auch in deutsch)</i>.
+Zur Zeit habe ich mehrere DS18B20 Sensoren und einen kabelgebunden Reed-Kontakt mit dem CC2531 verbunden und erfolgreich im Zigbee2mqtt eingebunden.
 
-<hr
+Bei Fragen und Anregungen, einfach ein Issue eröffnen.
 
-To-Do:
+---
+
+<H3>To-Do:</H3>
 
 <ul>
 <li>US-100 Sensor</li>
 <li>...</li>
 </ul>
+
+---
+
+<H3>Unterstützung</H3>
+
+Falls Dir unsere Arbeit gefällt und Du uns unterstützen möchtest, wir freuen uns über jede Spende.
+<i>(Dieser Link führt zu unserem PayPal-Konto)</i>
+
+[![Spende](https://raw.githubusercontent.com/inventwo/ioBroker.vis-icontwo/refs/heads/master/img/spende.png)](https://www.paypal.com/donate/?hosted_button_id=7W6M3TFZ4W9LW)
