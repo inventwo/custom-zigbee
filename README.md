@@ -1,7 +1,10 @@
 [![Paypal Donation](https://img.shields.io/badge/paypal-donate%20|%20spenden-green.svg)](https://www.paypal.com/donate/?hosted_button_id=7W6M3TFZ4W9LW)
 
-<H3>Everything about my own Zigbee devices <i>(with ptvo)</i></H3>
+![Logo](https://raw.githubusercontent.com/inventwo/ioBroker.vis-icontwo/refs/heads/master/www/Brands/inventwo_w.png)
+
+<H3>Everything about our own Zigbee devices <i>(with ptvo)</i></H3>
 <hr>
+
 <ul>
 <li>External converters <i>(for Zigbee2mqtt)</i></li>
 <li>Matching icons</li>
