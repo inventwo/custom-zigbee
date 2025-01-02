@@ -5,7 +5,7 @@
 ---
 
 <ul>
-      <li>Externe Konverter <i>(für Zigbee2mqtt)</i></li>
+      <li>Externe Konverter</li>
       <li>Passende Icons</li>
       <li>Firmware Dateien <i>(kommen noch)</i></li>
 </ul>
