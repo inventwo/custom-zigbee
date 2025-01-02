@@ -1,3 +1,5 @@
+![Logo](https://raw.githubusercontent.com/inventwo/ioBroker.vis-icontwo/refs/heads/master/www/Brands/inventwo_w.png)
+
 <H3>Alles rund um eigene Zigbee Geräte <i>(per PTVO)</i></H3>
 
 ---
