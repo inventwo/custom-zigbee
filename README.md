@@ -12,11 +12,11 @@
 
 ---
 
-Zur Zeit habe ich mehrere DS18B20 Sensoren und einen kabelgebunden Reed-Kontakt mit dem CC2531 verbunden und erfolgreich im Zigbee2mqtt eingebunden.
+Zur Zeit haben wir mehrere DS18B20 Sensoren und einen kabelgebunden Reed-Kontakt mit dem CC2531 verbunden und erfolgreich im Zigbee2mqtt eingebunden.
 
-Als Firmware nutze ich hierbei die <b>Zigbee Configurable Firmware</b> von https://ptvo.info
+Als Firmware nutzen wir hierbei die <b>Zigbee Configurable Firmware</b> von https://ptvo.info
 
-Bei Fragen und Anregungen, einfach ein Issue eröffnen.
+Bei Fragen und Anregungen, bitte ein Issue eröffnen.
 
 ---
 
