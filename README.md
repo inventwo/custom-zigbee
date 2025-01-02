@@ -1,6 +1,6 @@
 ![Logo](https://raw.githubusercontent.com/inventwo/ioBroker.vis-icontwo/refs/heads/master/www/Brands/inventwo_w.png)
 
-<H3>Alles rund um eigene Zigbee Geräte <i>(per PTVO)</i></H3>
+<H3>Alles rund um eigene Zigbee Geräte</H3>
 
 ---
 
@@ -13,6 +13,8 @@
 ---
 
 Zur Zeit habe ich mehrere DS18B20 Sensoren und einen kabelgebunden Reed-Kontakt mit dem CC2531 verbunden und erfolgreich im Zigbee2mqtt eingebunden.
+
+Als Firmware nutze ich hierbei die <b>Zigbee Configurable Firmware</b> von https://ptvo.info
 
 Bei Fragen und Anregungen, einfach ein Issue eröffnen.
 
