@@ -9,4 +9,4 @@
 
 I have currently connected several DS18B20 sensors and a wired reed contact to the CC2531 and successfully integrated them into Zigbee2mqtt.
 
-If you have any questions or suggestions, just open an issue.
+If you have any questions or suggestions, just open an issue <i>(also in German - gern auch in deutsch)</i>.
