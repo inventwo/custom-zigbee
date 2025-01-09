@@ -22,23 +22,42 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
 
 ## Projekte:
 
-<b>CC2531 mit DS18B20 Sensoren</b>
 
+• <b>CC2531 mit DS18B20 Sensoren</b>
 <table>
     <tr>
-      <th style="text-align: center">Firmware:</th>
-      <th style="text-align: center">Converter:</th>
-      <th style="text-align: center">Icon:</th>
+      <th style="text-align: center"><sub>Firmware:</th>
+      <th style="text-align: center"><sub>Converter:</th>
+      <th style="text-align: center"><sub>Icon:</th>
     </tr>
     <tr>
-      <th style="text-align: center">CC2531-DS18B20_20250109.hex<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/CC2531-DS18B20_20250109.hex</th>
-      <th style="text-align: center">CC2531-DS18B20_20250109.js<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Converter/CC2531.DB18B20.js</th>
-      <th style="text-align: center">INV.CC-DS18B20.png<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Icons/INV.CC-DS18B20.png</th>
+      <th style="text-align: center"><sub>CC2531-DS18B20_20250109.hex<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/CC2531-DS18B20_20250109.hex</th>
+      <th style="text-align: center"><sub>CC2531-DS18B20_20250109.js<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Converter/CC2531.DB18B20.js</th>
+      <th style="text-align: center"><sub>INV.CC-DS18B20.png<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Icons/INV.CC-DS18B20.png</th>
     </tr>
     <tr>
-      <th style="text-align: center">&nbsp;</th>
-      <th style="text-align: center">&nbsp;</th>
-      <th style="text-align: center">(bereits in der Firmware enthalten)</th>
+      <th style="text-align: center"><sub>&nbsp;</th>
+      <th style="text-align: center"><sub>&nbsp;</th>
+      <th style="text-align: center"><sub>(bereits in der Firmware enthalten)</th>
+    </tr>
+</table>
+    
+• <b>CC2530 mit US-100 Sensor</b>
+<table>
+    <tr>
+      <th style="text-align: center"><sub>Firmware:</th>
+      <th style="text-align: center"><sub>Converter:</th>
+      <th style="text-align: center"><sub>Icon:</th>
+    </tr>
+    <tr>
+       <th style="text-align: center"><sub>CC2530-US100_<br><br>&nbsp;</th>
+      <th style="text-align: center"><sub>CC2531-US100.js<br><br>&nbsp;</th>
+      <th style="text-align: center"><sub>INV.CC-HCSR04.png<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Icons/INV.CC-HCSR04.png</th>
+    </tr>
+    <tr>
+      <th style="text-align: center"><sub>Kommt in Kürze</th>
+      <th style="text-align: center"><sub>Kommt in Kürze</th>
+      <th style="text-align: center"><sub>(bereits in der Firmware enthalten)</th>
     </tr>
 </table>
 
