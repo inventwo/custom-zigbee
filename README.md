@@ -51,12 +51,12 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
     </tr>
     <tr>
        <th style="text-align: center"><sub>CC2531-US100_20250109.hex<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/CC2531-US100_20250109.hex</th>
-      <th style="text-align: center"><sub>CC2531-US100.js<br><brhttps://github.com/inventwo/custom-zigbee/blob/main/Converter/CC2531.US100.js</th>
+      <th style="text-align: center"><sub>CC2531-US100.js<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Converter/CC2531.US100.js</th>
       <th style="text-align: center"><sub>INV.CC-HCSR04.png<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Icons/INV.CC-HCSR04.png</th>
     </tr>
     <tr>
-      <th style="text-align: center"><sub>Kommt in Kürze</th>
-      <th style="text-align: center"><sub>Kommt in Kürze</th>
+      <th style="text-align: center"><sub></th>
+      <th style="text-align: center"><sub></th>
       <th style="text-align: center"><sub>(bereits in der Firmware enthalten)</th>
     </tr>
 </table>
