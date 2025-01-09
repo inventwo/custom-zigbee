@@ -63,7 +63,8 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
 ## To-Do:
 
 <ul>
-<li>US-100 Ultrschall-Sensor</li>
+<li>Relais</li>
+<li>Kabelgebundene BWM</li>
 <li>...</li>
 </ul>
 
