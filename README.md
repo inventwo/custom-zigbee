@@ -41,6 +41,9 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
       <th style="text-align: center"><sub>(bereits in der Firmware enthalten)</th>
     </tr>
 </table>
+            
+![grafik](https://github.com/user-attachments/assets/c11c69c5-aa03-49fd-83b9-af3c5f638d3b)
+
     
 • <b>CC2530 mit US-100 Sensor</b>
 <table>
