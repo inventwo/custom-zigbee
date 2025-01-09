@@ -7,7 +7,7 @@
 <ul>
       <li>Externe Konverter</li>
       <li>Passende Icons</li>
-      <li>Firmware Dateien <i>(kommen noch)</i></li>
+      <li>Firmware Dateien</li>
 </ul>
 
 ---
