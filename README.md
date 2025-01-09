@@ -12,7 +12,7 @@
 
 ---
 
-Als Firmware nutzen wir zur Zeit hierbei die <b>Zigbee Configurable Firmware</b> von https://ptvo.info
+Als Firmware nutzen wir zur Zeit die <b>Zigbee Configurable Firmware</b> von https://ptvo.info
 
 Bei Fragen und Anregungen, bitte ein Issue eröffnen.
 
