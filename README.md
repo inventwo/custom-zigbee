@@ -64,6 +64,9 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
     </tr>
 </table>
 
+![grafik](https://github.com/user-attachments/assets/2055cea0-6924-4928-9e9f-5c0efa9dd71d)
+
+
 ---
 
 ## To-Do:
