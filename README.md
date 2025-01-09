@@ -1,8 +1,11 @@
 ![Logo](https://avatars.githubusercontent.com/u/61345076?s=200&v=4)
 
-<H3>Alles rund um unsere eigene Zigbee Geräte</H3>
+## Alles rund um unsere eigene Zigbee Geräte
+Wir erstellen die Firmware und Converter in erster Linie für Zigbee2mqtt und verwenden die Geräte im ioBroker. Ob und wie sie in den Zigbee Adpater eingebunden werden können, wissen wir nicht. Wir können nur in Bezug auf Zigbee2mqtt helfen.
+
 
 ---
+Hier findest du:
 
 <ul>
       <li>Externe Konverter</li>
@@ -30,8 +33,8 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
       <th style="text-align: center">Icon:</th>
     </tr>
     <tr>
-      <th style="text-align: center"><sub>CC2531-DS18B20_20250109.hex<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/CC2531-DS18B20_20250109.hex</th>
-      <th style="text-align: center"><sub>CC2531-DS18B20_20250109.js<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Converter/CC2531.DS18B20.js.js</th>
+      <th style="text-align: center"><sub>CC2531-DS18B20_20250110.hex<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/CC2531-DS18B20_20250110.hex</th>
+      <th style="text-align: center"><sub>CC2531-DS18B201.js<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Converter/CC2531.DS18B20.js.js</th>
       <th style="text-align: center"><sub>INV.CC-DS18B20.png<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Icons/INV.CC-DS18B20.png</th>
     </tr>
 </table>
