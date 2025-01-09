@@ -35,11 +35,6 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
       <th style="text-align: center"><sub>CC2531-DS18B20_20250109.js<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Converter/CC2531.DS18B20.js.js</th>
       <th style="text-align: center"><sub>INV.CC-DS18B20.png<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Icons/INV.CC-DS18B20.png</th>
     </tr>
-    <tr>
-      <th style="text-align: center"><sub>&nbsp;</th>
-      <th style="text-align: center"><sub>&nbsp;</th>
-      <th style="text-align: center"><sub>(bereits in der Firmware enthalten)</th>
-    </tr>
 </table>
             
 ![grafik](https://github.com/user-attachments/assets/c11c69c5-aa03-49fd-83b9-af3c5f638d3b)
@@ -56,11 +51,6 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
        <th style="text-align: center"><sub>CC2531-US100_20250109.hex<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/CC2531-US100_20250109.hex</th>
       <th style="text-align: center"><sub>CC2531-US100.js<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Converter/CC2531.US100.js</th>
       <th style="text-align: center"><sub>INV.CC-HCSR04.png<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Icons/INV.CC-HCSR04.png</th>
-    </tr>
-    <tr>
-      <th style="text-align: center"><sub></th>
-      <th style="text-align: center"><sub></th>
-      <th style="text-align: center"><sub>(bereits in der Firmware enthalten)</th>
     </tr>
 </table>
 
