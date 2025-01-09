@@ -37,7 +37,8 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
     </tr>
 </table>
             
-![grafik](https://github.com/user-attachments/assets/c11c69c5-aa03-49fd-83b9-af3c5f638d3b)
+![grafik](https://github.com/user-attachments/assets/a6a9ce3f-2a5f-4e95-8726-cf1baf356c47)
+
 
     
 • <b>CC2530 mit US-100 Sensor</b>
