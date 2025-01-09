@@ -20,6 +20,17 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
 
 ---
 
+## Projekte:
+
+<b>CC2531 mit DS18B20 Sensoren</b>
+<ul>
+<li>Firmware: https://github.com/inventwo/custom-zigbee/blob/main/Firmware/CC2531-DS18B20_20250109.hex </li>
+<li>Icon: Bereits in der Firmware enthalten</li>
+<li>Converter: https://github.com/inventwo/custom-zigbee/blob/main/Converter/CC2531.DB18B20.js</li>
+</ul>
+
+---
+
 ## To-Do:
 
 <ul>
