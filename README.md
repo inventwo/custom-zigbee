@@ -34,7 +34,7 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
       <th style="text-align: center">Config:</th>
     </tr>
     <tr>
-      <th style="text-align: center"><sub>CC2531-DS18B20_20250110.hex<br><br>[Link]https://github.com/inventwo/custom-zigbee/blob/main/Firmware/CC2531-DS18B20_20250110.hex</th>
+      <th style="text-align: center"><sub>CC2531-DS18B20_20250110.hex<br><br> <a href="https://github.com/inventwo/custom-zigbee/blob/main/Firmware/CC2531-DS18B20_20250110.hex">LINK</a> </th>
       <th style="text-align: center"><sub>CC2531-DS18B201.js<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Converter/CC2531.DS18B20.js.js</th>
       <th style="text-align: center"><sub>INV.CC-DS18B20.png<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Icons/INV.CC-DS18B20.png</th>
       <th style="text-align: center"><sub>CC2531-DS18B20_20250110.txt<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/CC2531-DS18B20_20250110.txt</th>
