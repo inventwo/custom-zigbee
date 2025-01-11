@@ -11,6 +11,7 @@ Hier findest du:
       <li>Externe Konverter</li>
       <li>Passende Icons</li>
       <li>Firmware Dateien</li>
+      <li>STL - Druckdateien</li>
 </ul>
 
 ---
