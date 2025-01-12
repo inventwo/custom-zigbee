@@ -68,7 +68,8 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
 
 ## CC2531 pinout:
 
-![grafik](https://github.com/user-attachments/assets/76a3fb32-1f4d-483d-827b-5c4ed836587e)
+![grafik](https://github.com/user-attachments/assets/268d6ceb-dee3-4358-b760-24207cd92f2a)
+
 
 ---
 
