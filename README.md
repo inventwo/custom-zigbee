@@ -1,4 +1,4 @@
-![Github](https://github.com/user-attachments/assets/5a7a37f5-b791-49e9-a42c-4d3f816e6c4a)
+![inventwo-zigbee](https://github.com/user-attachments/assets/7a0ce136-2041-46f5-a6f8-a5aef2dd7a00)
 
 ## Alles rund um unsere eigene Zigbee Geräte
 Wir erstellen die Firmware und Converter in erster Linie für Zigbee2mqtt und verwenden die Geräte im ioBroker. Ob und wie sie in den Zigbee Adpater eingebunden werden können, wissen wir nicht. Wir können nur in Bezug auf Zigbee2mqtt helfen.
