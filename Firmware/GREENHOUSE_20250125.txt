@@ -1,0 +1,21 @@
+Board type: CC2530
+Device type: End device without routing
+Manufacturer name: inventwo
+Model ID: CC2530.PLANT
+Update firmware's timestamp : 2025-01-25
+Status LED: P22, Sending reports
+Set default reporting interval (s): 10
+
+Output pins:
+P21: Output 1, DS18B20, Pull-up (Sensor ID (optional, hex): , Mode: Multiple on bus, Auto-detect)
+P01: Output 2, Temperature sensor (1-wire), External pull-up (Type: DHT22)
+P00: Output 3, ADC (raw value, max 3.3V)
+P02: Output 4, ADC (raw value, max 3.3V)
+P30: Output 5, GPIO (Role: Contact), Remember state
+P31: Output 6, GPIO (Role: Contact), Remember state
+P07: Output 7, GPIO, External pull-up (Role: Generic), Remember state
+P06: Output 8, GPIO, External pull-up (Role: Generic), Remember state
+
+Input pins:
+P11: Input 5, GPIO, Pull-up, Switch, Link to out 5 (Bind command: On/Off)
+P12: Input 6, GPIO, Pull-up, Switch, Link to out 6 (Bind command: On/Off)
