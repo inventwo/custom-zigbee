@@ -46,7 +46,7 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
 
 
     
-• <b>CC2530 mit US-100 Sensor</b>
+• <b>CC2531 mit US-100 Sensor</b>
 <table>
     <tr>
       <th style="text-align: center">Firmware:</th>
@@ -64,11 +64,40 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
 
 ![grafik](https://github.com/user-attachments/assets/2055cea0-6924-4928-9e9f-5c0efa9dd71d)
 
+
+
+• <b>CC2530 mit meheren Sensore, Kontakten und Relais</b>
+<br>Hardwareliste kommt die Tage!
+<table>
+    <tr>
+      <th style="text-align: center">Firmware:</th>
+      <th style="text-align: center">Converter:</th>
+      <th style="text-align: center">Icon:</th>
+      <th style="text-align: center">Config:</th>
+    </tr>
+    <tr>
+      <th style="text-align: center"><sub>GREENHOUSE_20250125.hex<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/GREENHOUSE_20250125.hex</th>
+      <th style="text-align: center"><sub>CC2530.PLANT.js<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Converter/CC2530.PLANT.js</th>
+      <th style="text-align: center"><sub>INV.CC-HCSR04.png<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Icons/INV.CC-HCSR04.png</th>
+      <th style="text-align: center"><sub>GREENHOUSE_20250125.txt
+<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/GREENHOUSE_20250125.txt</th>
+    </tr>
+</table>
+
+![grafik](https://github.com/user-attachments/assets/05d744ce-3844-4e32-a1a0-304488884db3)
+
+
+
 ---
 
 ## CC2531 pinout:
 
 ![grafik](https://github.com/user-attachments/assets/268d6ceb-dee3-4358-b760-24207cd92f2a)
+
+## CC2530 pinout:
+
+![grafik](https://github.com/user-attachments/assets/5245642b-8e53-48a0-8eec-4f875354b5e1)
+
 
 
 ---
