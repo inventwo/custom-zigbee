@@ -201,18 +201,18 @@ const device = {
     zigbeeModel: ['CC2530.PLANT'],
     model: 'CC2530.PLANT',
     vendor: 'inventwo',
-    description: '[Greehnhouse](https://github.com/inventwo/custom-zigbee)',
+    description: '[Greenhouse](https://github.com/inventwo/custom-zigbee)',
     fromZigbee: [fz.ignore_basic_report, fz.ptvo_switch_analog_input, fz.temperature, fz.ptvo_humidity, fz.ptvo_on_off, fz.ptvo_multistate_action, fz.ptvo_on_off_config,],
     toZigbee: [tz.ptvo_switch_trigger, tz.on_off, tz.ptvo_on_off_config,],
-    exposes: [e.temperature().withEndpoint('l1'),
-      e.temperature().withEndpoint('l2'),
-      e.humidity().withEndpoint('l2'),
-      exposes.numeric('l3', ea.STATE).withDescription('Feuchtigkeit Index L3'),
-      exposes.numeric('l4', ea.STATE).withDescription('Feuchtigkeit Index L4'),
-      e.contact().withEndpoint('l5'),
-      e.contact().withEndpoint('l6'),
-      e.switch().withEndpoint('l7'),
-      e.switch().withEndpoint('l8'),
+    exposes: [e.temperature().withEndpoint('l1').withDescription('Bodentemperatur L1'),
+      e.temperature().withEndpoint('l2').withDescription('Lufttemperatur L2'),
+      e.humidity().withEndpoint('l2').withDescription('Luftfeuchte L2'),
+      exposes.numeric('l3', ea.STATE).withDescription('Bodenfeuchte L3').withUnit('µS/cm'),
+      exposes.numeric('l4', ea.STATE).withDescription('Bodenfeuchte L4').withUnit('µS/cm'),
+      e.contact().withEndpoint('l5').withDescription('Kontakt Eingang L5'),
+      e.contact().withEndpoint('l6').withDescription('Kontakt Fenster L6'),
+      e.switch().withEndpoint('l7').withDescription('Relais Licht L7'),
+      e.switch().withEndpoint('l8').withDescription('Relais Heizung L8'),
       ...ptvo_on_off_config_exposes('l5'),
       ...ptvo_on_off_config_exposes('l6'),
 ],
@@ -234,3 +234,4 @@ const device = {
 };
 
 module.exports = device;
+
