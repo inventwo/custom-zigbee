@@ -207,12 +207,12 @@ const device = {
     exposes: [e.temperature().withEndpoint('l1').withDescription('Bodentemperatur L1'),
       e.temperature().withEndpoint('l2').withDescription('Lufttemperatur L2'),
       e.humidity().withEndpoint('l2').withDescription('Luftfeuchte L2'),
-      exposes.numeric('l3', ea.STATE).withDescription('Bodenfeuchte L3').withUnit('µS/cm'),
-      exposes.numeric('l4', ea.STATE).withDescription('Bodenfeuchte L4').withUnit('µS/cm'),
+      exposes.numeric('l3', ea.STATE).withDescription('ADC raw value').withDescription('Bodenfeuchte L3').withUnit('µS/cm'),
+      exposes.numeric('l4', ea.STATE).withDescription('ADC raw value').withDescription('Bodenfeuchte L4').withUnit('µS/cm'),
       e.contact().withEndpoint('l5').withDescription('Kontakt Eingang L5'),
       e.contact().withEndpoint('l6').withDescription('Kontakt Fenster L6'),
-      e.switch().withEndpoint('l7').withDescription('Relais Licht L7'),
-      e.switch().withEndpoint('l8').withDescription('Relais Heizung L8'),
+      e.switch().withEndpoint('l7'),
+      e.switch().withEndpoint('l8'),
       ...ptvo_on_off_config_exposes('l5'),
       ...ptvo_on_off_config_exposes('l6'),
 ],
@@ -234,4 +234,3 @@ const device = {
 };
 
 module.exports = device;
-
