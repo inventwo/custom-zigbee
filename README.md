@@ -76,10 +76,10 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
       <th style="text-align: center">Config:</th>
     </tr>
     <tr>
-      <th style="text-align: center"><sub>GREENHOUSE_20250125.hex<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/GREENHOUSE_20250125.hex</th>
+      <th style="text-align: center"><sub>GREENHOUSE_20250126.hex<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/GREENHOUSE_20250126.hex</th>
       <th style="text-align: center"><sub>CC2530.PLANT.js<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Converter/CC2530.PLANT.js</th>
       <th style="text-align: center"><sub>INV.CC-HCSR04.png<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Icons/INV.CC-HCSR04.png</th>
-      <th style="text-align: center"><sub>GREENHOUSE_20250125.txt
+      <th style="text-align: center"><sub>GREENHOUSE_20250126.txt
 <br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/GREENHOUSE_20250125.txt</th>
     </tr>
 </table>
