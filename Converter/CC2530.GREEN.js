@@ -218,7 +218,7 @@ const device = {
       e.contact().withEndpoint('l6').withDescription('Fensterkontakt L6'),
       e.switch().withEndpoint('Licht'),
       e.switch().withEndpoint('Heizung'),
-      ...ptvo_on_off_config_exposes('Eingang'),
+      ...ptvo_on_off_config_exposes('l5'),
       ...ptvo_on_off_config_exposes('l6'),
     ],
     meta: {
