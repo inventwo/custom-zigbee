@@ -194,7 +194,10 @@ function ptvo_on_off_config_exposes(epName) {
     return features;
 }
 
-
+//
+// Angepasst werden muessen die EP Namen in den Exposes im Device (Mark A)
+// sowie die Zuordnung EPName zu EP ID (Mark B) Die müssen zusammen passen, incl. Gross/Kleinschreibung
+//
 
 
 const device = {
@@ -204,6 +207,7 @@ const device = {
     description: '[Greenhouse](https://github.com/inventwo/custom-zigbee)',
     fromZigbee: [fz.ignore_basic_report, fz.ptvo_switch_analog_input, fz.temperature, fz.ptvo_humidity, fz.ptvo_on_off, fz.ptvo_multistate_action, fz.ptvo_on_off_config,],
     toZigbee: [tz.ptvo_switch_trigger, tz.on_off, tz.ptvo_on_off_config,],
+// MARK A    
     exposes: [
       e.temperature().withEndpoint('Erdreich').withDescription('Bodentemperatur L1'),
       e.temperature().withEndpoint('Innenraum').withDescription('Lufttemperatur L2'),
@@ -221,7 +225,8 @@ const device = {
         multiEndpoint: true,
         binaryEndpoints: {'l5': 'contact', 'l6': 'contact', }, 
     },
-    endpoint: (device) => {
+// MARK B
+   endpoint: (device) => {
         return {
             Erdreich: 1, Innenraum: 2, l3: 3, l4: 4, l5: 5, l6: 6, Licht: 7, Heizung: 8,
         };
