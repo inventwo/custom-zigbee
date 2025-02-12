@@ -70,14 +70,10 @@ fz.ptvo_pressure = {
 
 
 //
-// A: Leider ungetestet - ich hab das Device nicht geflasht bekommen. Sollte aber so gehen
 // Angepasst werden muessen die EP Namen in den Exposes im Device (Mark A)
 // sowie die Zuordnung EPName zu EP ID (Mark B) Die müssen zusammen passen, incl. Gross/Kleinschreibung
-// nach dem was ich an Code gesehen habe passt das für:
-// temperatur, humidity, on/off. für weiteres müssten wir das testen
-// ggf. können wir auch die bisher umgestellten Konverter auf diese Mimik anpassen. Wäre letztendlich
-// durchgängiger.
 //
+
 const device = {
     zigbeeModel: ['CC2531.DHT22'],
     model: 'CC2531.DHT22',
@@ -85,7 +81,7 @@ const device = {
     description: '[CC2531 w. DHT22 Sensor](https://github.com/inventwo/custom-zigbee)',
     fromZigbee: [fz.ignore_basic_report, fz.temperature, fz.ptvo_humidity,],
     toZigbee: [tz.ptvo_switch_trigger,],
-    // MARK A
+// MARK A
     exposes: [e.temperature().withEndpoint('Innen').withDescription('Innentemperatur'),
       e.humidity().withEndpoint('Innen').withDescription('Innenfeuchtigkeit'),
       e.temperature().withEndpoint('Aussen').withDescription('Aussentemperatur'),
@@ -95,7 +91,7 @@ const device = {
         multiEndpoint: true,
 
     },
-    // MARK B
+// MARK B
     endpoint: (device) => {
         return {
             Innen: 1, Aussen: 2,
