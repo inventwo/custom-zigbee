@@ -10,6 +10,24 @@ const modernExposes = (e.hasOwnProperty('illuminance_lux'))? false: true;
 const fz = zigbeeHerdsmanConverters.fromZigbeeConverters || zigbeeHerdsmanConverters.fromZigbee;
 const tz = zigbeeHerdsmanConverters.toZigbeeConverters || zigbeeHerdsmanConverters.toZigbee;
 
+
+function precisionRound(number, precision) {
+    if (typeof precision === 'number') {
+        const factor = Math.pow(10, precision);
+        return Math.round(number * factor) / factor;
+    } else if (typeof precision === 'object') {
+        const thresholds = Object.keys(precision)
+            .map(Number)
+            .sort((a, b) => b - a);
+        for (const t of thresholds) {
+            if (!isNaN(t) && number >= t) {
+                return precisionRound(number, precision[t]);
+            }
+        }
+    }
+    return number;
+}
+
 const ptvo_switch = (zigbeeHerdsmanConverters.findByModel)?zigbeeHerdsmanConverters.findByModel('ptvo.switch'):zigbeeHerdsmanConverters.findByDevice({modelID: 'ptvo.switch'});
 fz.legacy = ptvo_switch.meta.tuyaThermostatPreset;
 fz.ptvo_on_off = {
@@ -192,7 +210,7 @@ fz.ptvo_switch_analog_input= {
         payload[name] = precisionRound(msg.data['presentValue'], 3);
         const cluster = 'genLevelCtrl';
         if (endpoint && (endpoint.supportsInputCluster(cluster) || endpoint.supportsOutputCluster(cluster))) {
-            payload['brightness_' + name] = msg.data['presentValue'];
+            payload[postfixWithEndpointName('brightness', msg, model, meta)] = msg.data['presentValue'];
         } else if (msg.data.description !== undefined) {
             const data1 = msg.data['description'];
             if (data1) {
@@ -286,8 +304,8 @@ const device = {
       e.temperature().withEndpoint('Erdreich').withDescription('Bodentemperatur L1'),
       e.temperature().withEndpoint('Innenraum').withDescription('Lufttemperatur L2'),
       e.humidity().withEndpoint('Innenraum').withDescription('Luftfeuchte L2'),
-      exposes.numeric('Bodenfeuchte', ea.STATE).withDescription('Bodenfeuchte L3').withUnit('µS/cm'),
-      exposes.numeric('Bodenfeuchte', ea.STATE).withDescription('Bodenfeuchte L4').withUnit('µS/cm'),
+      exposes.numeric('Bodenfeuchte', ea.STATE).withDescription('Bodenfeuchte L3').withUnit('µS/cm').withEndpoint('l3'),
+      exposes.numeric('Bodenfeuchte', ea.STATE).withDescription('Bodenfeuchte L4').withUnit('µS/cm').withEndpoint('l4'),
       e.contact().withEndpoint('l5').withDescription('Türkontakt L5'),
       e.contact().withEndpoint('l6').withDescription('Fensterkontakt L6'),
       e.switch().withEndpoint('Licht'),
