@@ -187,7 +187,7 @@ fz.ptvo_switch_analog_input= {
     convert: (model, msg, publish, options, meta) => {
         const payload = {};
         const channel = msg.endpoint.ID;
-        const name = `l${channel}`;
+        const name = postfixWithEndpointName('Bodenfeuchte', msg, model, meta);
         const endpoint = msg.endpoint;
         payload[name] = precisionRound(msg.data['presentValue'], 3);
         const cluster = 'genLevelCtrl';
@@ -286,8 +286,8 @@ const device = {
       e.temperature().withEndpoint('Erdreich').withDescription('Bodentemperatur L1'),
       e.temperature().withEndpoint('Innenraum').withDescription('Lufttemperatur L2'),
       e.humidity().withEndpoint('Innenraum').withDescription('Luftfeuchte L2'),
-      exposes.numeric('l3', ea.STATE).withDescription('Bodenfeuchte L3').withUnit('µS/cm'),
-      exposes.numeric('l4', ea.STATE).withDescription('Bodenfeuchte L4').withUnit('µS/cm'),
+      exposes.numeric('Bodenfeuchte', ea.STATE).withDescription('Bodenfeuchte L3').withUnit('µS/cm'),
+      exposes.numeric('Bodenfeuchte', ea.STATE).withDescription('Bodenfeuchte L4').withUnit('µS/cm'),
       e.contact().withEndpoint('l5').withDescription('Türkontakt L5'),
       e.contact().withEndpoint('l6').withDescription('Fensterkontakt L6'),
       e.switch().withEndpoint('Licht'),
