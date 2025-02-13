@@ -181,6 +181,80 @@ fz.ptvo_on_off_config = {
     },
 };
 
+fz.ptvo_switch_analog_input= {
+    cluster: 'genAnalogInput',
+    type: ['attributeReport', 'readResponse'],
+    convert: (model, msg, publish, options, meta) => {
+        const payload = {};
+        const channel = msg.endpoint.ID;
+        const name = `l${channel}`;
+        const endpoint = msg.endpoint;
+        payload[name] = precisionRound(msg.data['presentValue'], 3);
+        const cluster = 'genLevelCtrl';
+        if (endpoint && (endpoint.supportsInputCluster(cluster) || endpoint.supportsOutputCluster(cluster))) {
+            payload['brightness_' + name] = msg.data['presentValue'];
+        } else if (msg.data.description !== undefined) {
+            const data1 = msg.data['description'];
+            if (data1) {
+                const data2 = data1.split(',');
+                const devid = data2[1];
+                const unit = data2[0];
+                if (devid) {
+                    payload[postfixWithEndpointName('device', msg, model, meta)] = devid;
+                    //                    payload['device_' + name] = devid;
+                }
+
+                const valRaw = msg.data['presentValue'];
+                if (unit) {
+                    let val = precisionRound(valRaw, 1);
+
+                    const nameLookup = {
+                        C: 'temperature',
+                        '%': 'humidity',
+                        m: 'altitude',
+                        Pa: 'pressure',
+                        ppm: 'quality',
+                        psize: 'particle_size',
+                        V: 'voltage',
+                        A: 'current',
+                        Wh: 'energy',
+                        W: 'power',
+                        Hz: 'frequency',
+                        pf: 'power_factor',
+                        lx: 'illuminance',
+                    };
+
+                    let nameAlt = '';
+                    if (unit === 'A' || unit === 'pf') {
+                        if (valRaw < 1) {
+                            val = precisionRound(valRaw, 3);
+                        }
+                    }
+                    if (unit.startsWith('mcpm') || unit.startsWith('ncpm')) {
+                        const num = unit.substr(4, 1);
+                        nameAlt = num === 'A' ? unit.substr(0, 4) + '10' : unit;
+                        val = precisionRound(valRaw, 2);
+                    } else {
+                        nameAlt = nameLookup[unit];
+                    }
+                    if (nameAlt === undefined) {
+                        const valueIndex = parseInt(unit, 10);
+                        if (!isNaN(valueIndex)) {
+                            nameAlt = 'val' + unit;
+                        }
+                    }
+
+                    if (nameAlt !== undefined) {
+                        payload[postfixWithEndpointName(nameAlt, msg, model, meta)] = devid;
+//                        payload[nameAlt + '_' + name] = val;
+                    }
+                }
+            }
+        }
+        return payload;
+    },
+}
+
 function ptvo_on_off_config_exposes(epName) {
     const features = [];
     features.push(exposes.enum('switch_type', exposes.access.ALL,
@@ -207,7 +281,7 @@ const device = {
     description: '[Greenhouse](https://github.com/inventwo/custom-zigbee)',
     fromZigbee: [fz.ignore_basic_report, fz.ptvo_switch_analog_input, fz.temperature, fz.ptvo_humidity, fz.ptvo_on_off, fz.ptvo_multistate_action, fz.ptvo_on_off_config,],
     toZigbee: [tz.ptvo_switch_trigger, tz.on_off, tz.ptvo_on_off_config,],
-// MARK A    
+// MARK A
     exposes: [
       e.temperature().withEndpoint('Erdreich').withDescription('Bodentemperatur L1'),
       e.temperature().withEndpoint('Innenraum').withDescription('Lufttemperatur L2'),
@@ -223,7 +297,7 @@ const device = {
     ],
     meta: {
         multiEndpoint: true,
-        binaryEndpoints: {'l5': 'contact', 'l6': 'contact', }, 
+        binaryEndpoints: {'l5': 'contact', 'l6': 'contact', },
     },
 // MARK B
    endpoint: (device) => {
