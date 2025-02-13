@@ -11,22 +11,6 @@ const fz = zigbeeHerdsmanConverters.fromZigbeeConverters || zigbeeHerdsmanConver
 const tz = zigbeeHerdsmanConverters.toZigbeeConverters || zigbeeHerdsmanConverters.toZigbee;
 
 
-function precisionRound(number, precision) {
-    if (typeof precision === 'number') {
-        const factor = Math.pow(10, precision);
-        return Math.round(number * factor) / factor;
-    } else if (typeof precision === 'object') {
-        const thresholds = Object.keys(precision)
-            .map(Number)
-            .sort((a, b) => b - a);
-        for (const t of thresholds) {
-            if (!isNaN(t) && number >= t) {
-                return precisionRound(number, precision[t]);
-            }
-        }
-    }
-    return number;
-}
 
 const ptvo_switch = (zigbeeHerdsmanConverters.findByModel)?zigbeeHerdsmanConverters.findByModel('ptvo.switch'):zigbeeHerdsmanConverters.findByDevice({modelID: 'ptvo.switch'});
 fz.legacy = ptvo_switch.meta.tuyaThermostatPreset;
@@ -205,12 +189,12 @@ fz.ptvo_switch_analog_input= {
     convert: (model, msg, publish, options, meta) => {
         const payload = {};
         const channel = msg.endpoint.ID;
-        const name = postfixWithEndpointName('Bodenfeuchte', msg, model, meta);
+        const name = zigbeeHerdsmanUtils.postfixWithEndpointName('Bodenfeuchte', msg, model, meta);
         const endpoint = msg.endpoint;
-        payload[name] = precisionRound(msg.data['presentValue'], 3);
+        payload[name] = zigbeeHerdsmanUtils.precisionRound(msg.data['presentValue'], 3);
         const cluster = 'genLevelCtrl';
         if (endpoint && (endpoint.supportsInputCluster(cluster) || endpoint.supportsOutputCluster(cluster))) {
-            payload[postfixWithEndpointName('brightness', msg, model, meta)] = msg.data['presentValue'];
+            payload[zigbeeHerdsmanUtils.postfixWithEndpointName('brightness', msg, model, meta)] = msg.data['presentValue'];
         } else if (msg.data.description !== undefined) {
             const data1 = msg.data['description'];
             if (data1) {
@@ -218,13 +202,13 @@ fz.ptvo_switch_analog_input= {
                 const devid = data2[1];
                 const unit = data2[0];
                 if (devid) {
-                    payload[postfixWithEndpointName('device', msg, model, meta)] = devid;
+                    payload[zigbeeHerdsmanUtils.postfixWithEndpointName('device', msg, model, meta)] = devid;
                     //                    payload['device_' + name] = devid;
                 }
 
                 const valRaw = msg.data['presentValue'];
                 if (unit) {
-                    let val = precisionRound(valRaw, 1);
+                    let val = zigbeeHerdsmanUtils.precisionRound(valRaw, 1);
 
                     const nameLookup = {
                         C: 'temperature',
@@ -245,13 +229,13 @@ fz.ptvo_switch_analog_input= {
                     let nameAlt = '';
                     if (unit === 'A' || unit === 'pf') {
                         if (valRaw < 1) {
-                            val = precisionRound(valRaw, 3);
+                            val = zigbeeHerdsmanUtils.precisionRound(valRaw, 3);
                         }
                     }
                     if (unit.startsWith('mcpm') || unit.startsWith('ncpm')) {
                         const num = unit.substr(4, 1);
                         nameAlt = num === 'A' ? unit.substr(0, 4) + '10' : unit;
-                        val = precisionRound(valRaw, 2);
+                        val = zigbeeHerdsmanUtils.precisionRound(valRaw, 2);
                     } else {
                         nameAlt = nameLookup[unit];
                     }
@@ -263,7 +247,7 @@ fz.ptvo_switch_analog_input= {
                     }
 
                     if (nameAlt !== undefined) {
-                        payload[postfixWithEndpointName(nameAlt, msg, model, meta)] = devid;
+                        payload[zigbeeHerdsmanUtils.postfixWithEndpointName(nameAlt, msg, model, meta)] = devid;
 //                        payload[nameAlt + '_' + name] = val;
                     }
                 }
