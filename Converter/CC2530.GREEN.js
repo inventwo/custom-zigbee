@@ -1,11 +1,11 @@
 
 //                  Smartes Gewächshaus CC2530
 //
-//                  • 1x DS18B20 für die Bodentemperatur
-//                  • 1x DHT22 Innenraummessung
-//                  • 2x Soil-Sensoren
-//                  • 2x Reed
-//                  • 2x Relais
+//                  - 1x DS18B20 für die Bodentemperatur
+//                  - 1x DHT22 Innenraummessung
+//                  - 2x Soil-Sensoren
+//                  - 2x Reed
+//                  - 2x Relais
 
 
 const zigbeeHerdsmanConverters = require('zigbee-herdsman-converters');
