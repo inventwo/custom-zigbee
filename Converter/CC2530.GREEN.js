@@ -1,3 +1,14 @@
+
+
+//                  Smartes Gewächshaus CC2531
+//
+//                  • 1x DS18B20 für die Bodentemperatur
+//                  • 1x DHT22 Innenraummessung
+//                  • 2x Soil-Sensoren
+//                  • 2x Reed
+//                  • 2x Relais
+
+
 const zigbeeHerdsmanConverters = require('zigbee-herdsman-converters');
 const zigbeeHerdsmanUtils = require('zigbee-herdsman-converters/lib/utils');
 
@@ -34,8 +45,8 @@ fz.ptvo_on_off = {
   },
 };
 
-// Copied from fromZigbee.js
-// The standard converter does not append the endpoint number
+//                  Copied from fromZigbee.js
+//                  The standard converter does not append the endpoint number
 
 fz.ptvo_humidity = {
   cluster: 'msRelativeHumidity',
@@ -44,9 +55,10 @@ fz.ptvo_humidity = {
   convert: (model, msg, publish, options, meta) => {
       const humidity = parseFloat(msg.data['measuredValue']) / 100.0;
 
-      // https://github.com/Koenkk/zigbee2mqtt/issues/798
-      // Sometimes the sensor publishes non-realistic vales, it should only publish message
-      // in the 0 - 100 range, don't produce messages beyond these values.
+//                  https://github.com/Koenkk/zigbee2mqtt/issues/798
+//                  Sometimes the sensor publishes non-realistic vales, it should only publish message
+//                  in the 0 - 100 range, don't produce messages beyond these values.
+
       if (humidity >= 0 && humidity <= 100) {
           const property = zigbeeHerdsmanUtils.postfixWithEndpointName('humidity', msg, model, meta);
           return {[property]: zigbeeHerdsmanUtils.calibrateAndPrecisionRoundOptions(humidity, options, 'humidity')};
@@ -167,6 +179,8 @@ fz.ptvo_on_off_config = {
     },
 };
 
+//                  fzlocal
+
 fzlocal.ptvo_switch_analog_input= {
     cluster: 'genAnalogInput',
     type: ['attributeReport', 'readResponse'],
@@ -194,7 +208,7 @@ fzlocal.ptvo_switch_analog_input= {
                 const unit = data2[0];
                 if (devid) {
                      payload[zigbeeHerdsmanUtils.postfixWithEndpointName('device', msg, model, meta)] = devid;
-                    //                    payload['device_' + name] = devid;
+//                  payload['device_' + name] = devid;
                 }
 
                 const valRaw = msg.data['presentValue'];
@@ -239,7 +253,7 @@ fzlocal.ptvo_switch_analog_input= {
 
                     if (nameAlt !== undefined) {
                         payload[zigbeeHerdsmanUtils.postfixWithEndpointName(nameAlt, msg, model, meta)] = val;
-//                        payload[nameAlt + '_' + name] = val;
+//                  payload[nameAlt + '_' + name] = val;
                     }
                 }
             }
@@ -263,8 +277,8 @@ function ptvo_on_off_config_exposes(epName) {
 }
 
 //
-// Angepasst werden muessen die EP Namen in den Exposes im Device (Mark A)
-// sowie die Zuordnung EPName zu EP ID (Mark B) Die müssen zusammen passen, incl. Gross/Kleinschreibung
+//                  Angepasst werden muessen die EP Namen in den Exposes im Device (Mark A)
+//                  sowie die Zuordnung EPName zu EP ID (Mark B) Die müssen zusammen passen, incl. Gross/Kleinschreibung
 //
 
 
@@ -275,13 +289,15 @@ const device = {
     description: '[Greenhouse](https://github.com/inventwo/custom-zigbee)',
     fromZigbee: [fz.ignore_basic_report, fzlocal.ptvo_switch_analog_input, fz.temperature, fz.ptvo_humidity, fz.ptvo_on_off, fz.ptvo_multistate_action, fz.ptvo_on_off_config,],
     toZigbee: [tz.ptvo_switch_trigger, tz.on_off, tz.ptvo_on_off_config,],
-// MARK A
+
+//                  MARK A
+
     exposes: [
-      e.temperature().withEndpoint('Erdreich').withDescription('Bodentemperatur L1'),
+      e.temperature().withEndpoint('Boden').withDescription('Bodentemperatur L1'),
       e.temperature().withEndpoint('Innenraum').withDescription('Lufttemperatur L2'),
       e.humidity().withEndpoint('Innenraum').withDescription('Luftfeuchte L2'),
-      exposes.numeric('humidity', ea.STATE).withDescription('Bodenfeuchte L3').withUnit('µS/cm').withEndpoint('Tomaten'),
-      exposes.numeric('humidity', ea.STATE).withDescription('Bodenfeuchte L4').withUnit('µS/cm').withEndpoint('Gurken'),
+      exposes.numeric('soil_moisture', ea.STATE).withDescription('Bodenfeuchte L3').withUnit('µS/cm').withEndpoint('Links'),
+      exposes.numeric('soil_moisture', ea.STATE).withDescription('Bodenfeuchte L4').withUnit('µS/cm').withEndpoint('Rechts'),
       e.contact().withEndpoint('Eingang').withDescription('Eingangskontakt L5'),
       e.contact().withEndpoint('Fenster').withDescription('Fensterkontakt L6'),
       e.switch().withEndpoint('Licht'),
@@ -293,10 +309,12 @@ const device = {
         multiEndpoint: true,
         binaryEndpoints: {'Eingang': 'contact', 'Fenster': 'contact', },
     },
-// MARK B
+
+//                  MARK B
+
    endpoint: (device) => {
         return {
-            Erdreich: 1, Innenraum: 2, Tomaten: 3, Gurken: 4, Eingang: 5, Fenster: 6, Licht: 7, Heizung: 8,
+            Erdreich: 1, Innenraum: 2, Links: 3, Rechts: 4, Eingang: 5, Fenster: 6, Licht: 7, Heizung: 8,
         };
     },
 
@@ -304,8 +322,8 @@ const device = {
         return { 
             1: '', 
             2: '', 
-            3: 'humidity', 
-            4: 'humidity', 
+            3: 'soil_moisture', 
+            4: 'soil_moisture', 
             5: '', 
             6: '', 
             7: '', 
