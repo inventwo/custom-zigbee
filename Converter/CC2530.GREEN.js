@@ -1,5 +1,5 @@
 
-//                  Smartes Gewächshaus CC2531
+//                  Smartes Gewächshaus CC2530
 //
 //                  • 1x DS18B20 für die Bodentemperatur
 //                  • 1x DHT22 Innenraummessung
