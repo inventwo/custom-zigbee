@@ -1,5 +1,4 @@
 
-
 //                  Smartes Gewächshaus CC2531
 //
 //                  • 1x DS18B20 für die Bodentemperatur
