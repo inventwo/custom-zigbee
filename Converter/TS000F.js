@@ -29,3 +29,29 @@ const definition = {
 };
 
 module.exports = definition;
+
+datapoints: {
+    cluster: 'manuSpecificTuya',
+    type: ['commandDataResponse', 'commandDataReport', 'commandActiveStatusReport', 'commandActiveStatusReportAlt'],
+    convert: (model, msg, publish, options, meta) => {
+        if (utils.hasAlreadyProcessedMessage(msg, model)) return;
+        const result: KeyValue = {};
+        if (!model.meta || !model.meta.tuyaDatapoints) throw new Error('No datapoints map defined');
+        const datapoints = model.meta.tuyaDatapoints;
+        for (const dpValue of msg.data.dpValues) {
+            const dpId = dpValue.dp;
+            const dpEntry = datapoints.find((d) => d[0] === dpId);
+            const value = getDataValue(dpValue);
+            if (dpEntry?.[2]?.from) {
+                if (dpEntry[1]) {
+                    result[dpEntry[1]] = dpEntry[2].from(value, meta, options, publish, msg);
+                } else {
+                    Object.assign(result, dpEntry[2].from(value, meta, options, publish, msg));
+                }
+            } else {
+                logger.debug(`Datapoint ${dpId} not defined for '${meta.device.manufacturerName}' with value ${value}`, NS);
+            }
+        }
+        return result;
+    },
+} satisfies Fz.Converter,
