@@ -21,6 +21,8 @@ const definition = {
         multiEndpoint: true,
     },
 
+    icon: '/device_icons/custom/TS000F.png',
+    
     configure: async (device, coordinatorEndpoint, logger) => {
         const endpoint = device.getEndpoint(1);
         await endpoint.bind('genOnOff', coordinatorEndpoint);
