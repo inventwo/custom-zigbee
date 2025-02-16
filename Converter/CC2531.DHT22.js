@@ -70,14 +70,11 @@ fz.ptvo_pressure = {
 
 
 //
-// A: Leider ungetestet - ich hab das Device nicht geflasht bekommen. Sollte aber so gehen
-// Angepasst werden muessen die EP Namen in den Exposes im Device (Mark A)
-// sowie die Zuordnung EPName zu EP ID (Mark B) Die m�ssen zusammen passen, incl. Gross/Kleinschreibung
-// nach dem was ich an Code gesehen habe passt das f�r:
-// temperatur, humidity, on/off. f�r weiteres m�ssten wir das testen
-// ggf. k�nnen wir auch die bisher umgestellten Konverter auf diese Mimik anpassen. W�re letztendlich
-// durchg�ngiger.
+//                  Angepasst werden muessen die EP Namen in den Exposes im Device (Mark A)
+//                  sowie die Zuordnung EPName zu EP ID (Mark B) Die müssen zusammen passen, incl. Gross/Kleinschreibung
 //
+
+
 const device = {
     zigbeeModel: ['CC2531.DHT22'],
     model: 'CC2531.DHT22',
