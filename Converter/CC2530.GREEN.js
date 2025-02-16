@@ -1,7 +1,7 @@
 
-//                  Smartes Gewächshaus CC2530
+//                  Greenhouse CC2530
 //
-//                  - 1x DS18B20 für die Bodentemperatur
+//                  - 1x DS18B20 Bodentemperatur
 //                  - 1x DHT22 Innenraummessung
 //                  - 2x Soil-Sensoren
 //                  - 2x Reed
@@ -212,7 +212,7 @@ fzlocal.ptvo_switch_analog_input= {
 
                 const valRaw = msg.data['presentValue'];
                 if (unit) {
-                    let val = zigbeeHerdsmanUtils.precisionRound(valRaw, 1);
+                    let val = zigbeeHerdsmanUtils.precisionRound(valRaw, 3);
 
                     const nameLookup = {
                         C: 'temperature',
