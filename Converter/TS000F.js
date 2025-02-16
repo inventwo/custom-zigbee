@@ -19,9 +19,6 @@ const definition = {
     exposes: [], // Defines what capabilities (like temperature or on/off) are exposed to MQTT
     meta: {
         multiEndpoint: true,
-    },
-
-    icon: '/device_icons/custom/TS000F.png',
     
     configure: async (device, coordinatorEndpoint, logger) => {
         const endpoint = device.getEndpoint(1);
