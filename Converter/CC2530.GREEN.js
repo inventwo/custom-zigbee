@@ -330,7 +330,7 @@ const device = {
         };
     },
 
-    icon: '/device_icons/custom/GREENHOUSE.png',
+    icon: '/device_icons/custom/PLANT.png',
     
     configure: async (device, coordinatorEndpoint, logger) => {
       const endpoint = device.getEndpoint(1);
