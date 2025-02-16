@@ -22,7 +22,7 @@ const definition = {
     
     extend: [
         deviceEndpoints({"endpoints":{"0":0,"1":1}}),
-        onOff({"powerOnBehavior":false,/*"endpointNames":["1"]*/}),
+        onOff({"powerOnBehavior":false/*,"endpointNames":["1"]*/}),
         // tuya.modernExtend.dpTemperature({dp: 0x66, scale: 10})
         ],
     
