@@ -36,7 +36,7 @@ const definition = {
         // More configurations can be added here
     },
     
-    icon: '/device_icons/custom/DS18B20.png',
+    icon: '/device_icons/custom/INVENTWO.png',
 
 };
 
