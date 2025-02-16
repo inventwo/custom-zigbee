@@ -30,14 +30,13 @@ const definition = {
         ]
     },
     
+    icon: '/device_icons/custom/INVENTWO.png',
+    
     configure: async (device, coordinatorEndpoint, logger) => {
         const endpoint = device.getEndpoint(1);
         await endpoint.bind('genOnOff', coordinatorEndpoint);
         // More configurations can be added here
     },
-    
-    icon: '/device_icons/custom/INVENTWO.png',
-
 };
 
 module.exports = definition;
