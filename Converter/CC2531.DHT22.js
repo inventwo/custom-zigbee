@@ -82,17 +82,22 @@ const device = {
     description: '[CC2531 w. DHT22 Sensor](https://github.com/inventwo/custom-zigbee)',
     fromZigbee: [fz.ignore_basic_report, fz.temperature, fz.ptvo_humidity,],
     toZigbee: [tz.ptvo_switch_trigger,],
+	
     // MARK A
-    exposes: [e.temperature().withEndpoint('Werkstatt').withDescription('Innentemperatur'),
+	
+    exposes: [
+      e.temperature().withEndpoint('Werkstatt').withDescription('Innentemperatur'),
       e.humidity().withEndpoint('Werkstatt').withDescription('Innenfeuchtigkeit'),
       e.temperature().withEndpoint('Aussenbereich').withDescription('Aussentemperatur'),
       e.humidity().withEndpoint('Aussenbereich').withDescription('Aussenfeuchtigkeit'),
-],
+      ],
     meta: {
         multiEndpoint: true,
 
     },
+	
     // MARK B
+	
     endpoint: (device) => {
         return {
             Werkstatt: 1, Aussenbereich: 2,
