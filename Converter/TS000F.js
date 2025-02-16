@@ -1,5 +1,6 @@
 // Eigenes Logo per Pfad
 // Description bei der Temperatur möglich
+// Endpunktname beim Switch entfernt
 
 //temperature reading is working so leave it as tuya handling
 const tuya = require('zigbee-herdsman-converters/lib/tuya');
@@ -21,7 +22,7 @@ const definition = {
     
     extend: [
         deviceEndpoints({"endpoints":{"0":0,"1":1}}),
-        onOff({"powerOnBehavior":false,"endpointNames":["1"]}),
+        onOff({"powerOnBehavior":false,/*"endpointNames":["1"]*/}),
         // tuya.modernExtend.dpTemperature({dp: 0x66, scale: 10})
         ],
     
