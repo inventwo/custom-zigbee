@@ -25,7 +25,7 @@ const fzlocal = {
         const endpoint = msg.endpoint;
 
         payload['state'] = precisionRound(msg.data['presentValue'], 3);
-        if (msg.data['presentValue'] < 300) payload['mode'] = 'in Station'; else payload['mode'] = 'unterwegs';
+        if (msg.data['presentValue'] < 100) payload['mode'] = 'in Station'; else payload['mode'] = 'unterwegs';
 
         const cluster = 'genLevelCtrl';
         if (endpoint && (endpoint.supportsInputCluster(cluster) || endpoint.supportsOutputCluster(cluster))) {
