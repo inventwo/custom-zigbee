@@ -24,8 +24,6 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
 
 ## Projekte:
 
-<sub>Eigentlich sollte das Icon mit dem Converter übergeben werden. Sollte es mal nicht der Fall sein, lässt sich das Bild über Zigbee2mqtt <i>(in den Einstlungen)<i> einfach ersetzen. Die Incons sind auch alle hier verfügbar) Icon-Wünsche einfach per Issue melden.</sub>
-
 • <b>CC2531 mit DS18B20 Sensoren</b>
 
 ![grafik](https://github.com/user-attachments/assets/5a45f437-3bf9-4695-90e1-ee415eb7e059)
