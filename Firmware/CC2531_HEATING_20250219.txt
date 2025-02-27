@@ -1,0 +1,11 @@
+Board type: CC2530 (without external oscillator, like CC2531 dongle or Sonoff BasicZBR3)
+Device type: End device without routing
+Manufacturer name: inventwo
+Model ID: CC.HEATING
+Update firmware's timestamp : 2025-02-19
+Status LED: P00 (Inversed), Sending reports
+Set default reporting interval (s): 10
+
+Output pins:
+P05: Output 1, DS18B20, Pull-up (Sensor ID (optional, hex): , Mode: Single, Auto-detect)
+P17: Output 2, DS18B20, Pull-up (Sensor ID (optional, hex): , Mode: Single, Auto-detect)

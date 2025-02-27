@@ -1,0 +1,13 @@
+Board type: CC2530
+Device type: End device without routing
+Manufacturer name: inventwo
+Model ID: CC.RELAY
+Update firmware's timestamp : 2025-02-27
+Status LED: P22, Sending reports
+Set default reporting interval (s): 60
+
+Output pins:
+P01: Output 1, GPIO, External pull-up (Role: Generic), Remember state
+P02: Output 2, GPIO, External pull-up (Role: Generic), Remember state
+P03: Output 3, GPIO, External pull-up (Role: Generic), Remember state
+P04: Output 4, GPIO, External pull-up (Role: Generic), Remember state

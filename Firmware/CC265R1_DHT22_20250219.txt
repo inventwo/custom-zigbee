@@ -1,0 +1,13 @@
+Board type: CC2652R1
+Device type: Router
+Manufacturer name: inventwo
+Model ID: CC.DHT22
+Update firmware's timestamp : 2025-02-19
+Status LED: P06, Sending reports
+Set default reporting interval (s): 10
+
+Output pins:
+P00: Output 1, Temperature sensor (1-wire), External pull-up (Type: DHT22)
+P01: Output 2, Temperature sensor (1-wire), External pull-up (Type: DHT22)
+P04: Output 3, Temperature sensor (1-wire), External pull-up (Type: DHT22)
+P05: Output 4, Temperature sensor (1-wire), External pull-up (Type: DHT22)
