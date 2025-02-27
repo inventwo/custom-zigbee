@@ -27,65 +27,27 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
 <sub>Eigentlich sollte das Icon mit dem Converter übergeben werden. Sollte es mal nicht der Fall sein, lässt sich das Bild über Zigbee2mqtt <i>(in den Einstlungen)<i> einfach ersetzen. Die Incons sind auch alle hier verfügbar) Icon-Wünsche einfach per Issue melden.</sub>
 
 • <b>CC2531 mit DS18B20 Sensoren</b>
-<table>
-    <tr>
-      <th style="text-align: center">Firmware:</th>
-      <th style="text-align: center">Converter:</th>
-      <th style="text-align: center">Icon:</th>
-      <th style="text-align: center">Config:</th>
-    </tr>
-    <tr>
-      <th style="text-align: center"><sub>CC2531-DS18B20_20250110.hex<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/CC2531-DS18B20_20250110.hex</th>
-      <th style="text-align: center"><sub>CC2531-DS18B201.js<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Converter/CC2531.DS18B20.js.js</th>
-      <th style="text-align: center"><sub>INV.CC-DS18B20.png<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Icons/INV.CC-DS18B20.png</th>
-      <th style="text-align: center"><sub>CC2531-DS18B20_20250110.txt<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/CC2531-DS18B20_20250110.txt</th>
-      </tr>
-</table>
-            
-![grafik](https://github.com/user-attachments/assets/a6a9ce3f-2a5f-4e95-8726-cf1baf356c47)
 
+![grafik](https://github.com/user-attachments/assets/5a45f437-3bf9-4695-90e1-ee415eb7e059)
 
-    
+   
 • <b>CC2531 mit US-100 Sensor</b>
-<table>
-    <tr>
-      <th style="text-align: center">Firmware:</th>
-      <th style="text-align: center">Converter:</th>
-      <th style="text-align: center">Icon:</th>
-      <th style="text-align: center">Config:</th>
-    </tr>
-    <tr>
-      <th style="text-align: center"><sub>CC2531-US100_20250109.hex<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/CC2531-US100_20250109.hex</th>
-      <th style="text-align: center"><sub>CC2531-US100.js<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Converter/CC2531.US100.js</th>
-      <th style="text-align: center"><sub>INV.CC-HCSR04.png<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Icons/INV.CC-HCSR04.png</th>
-      <th style="text-align: center"><sub>CC2531-US100_20250109.txt<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/CC2531-US100_20250109.txt</th>
-    </tr>
-</table>
 
-![grafik](https://github.com/user-attachments/assets/2055cea0-6924-4928-9e9f-5c0efa9dd71d)
+![grafik](https://github.com/user-attachments/assets/8175f124-e625-4aec-bae3-f7347f2fcd2f)
 
 
+• <b>CC2530 mit mehreren Sensoren, Kontakten und Relais</b>
 
-• <b>CC2530 mit meheren Sensore, Kontakten und Relais</b>
-<br>Hardwareliste kommt die Tage!
-<table>
-    <tr>
-      <th style="text-align: center">Firmware:</th>
-      <th style="text-align: center">Converter:</th>
-      <th style="text-align: center">Icon:</th>
-      <th style="text-align: center">Config:</th>
-    </tr>
-    <tr>
-      <th style="text-align: center"><sub>GREENHOUSE_20250126.hex<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/GREENHOUSE_20250126.hex</th>
-      <th style="text-align: center"><sub>CC2530.PLANT.js<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Converter/CC2530.PLANT.js</th>
-      <th style="text-align: center"><sub>INV.CC-HCSR04.png<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Icons/INV.CC-HCSR04.png</th>
-      <th style="text-align: center"><sub>GREENHOUSE_20250126.txt
-<br><br>https://github.com/inventwo/custom-zigbee/blob/main/Firmware/GREENHOUSE_20250125.txt</th>
-    </tr>
-</table>
+![grafik](https://github.com/user-attachments/assets/b7e2305a-4e79-4fca-b558-dd72fba32b8c)
 
-![grafik](https://github.com/user-attachments/assets/05d744ce-3844-4e32-a1a0-304488884db3)
+• <b>CC265R1 mit DHT22 Sensoren</b>
 
+![grafik](https://github.com/user-attachments/assets/c81acf5d-4d10-45c9-b654-33ec63fa3dfe)
+
+
+• <b>CC2530 mit Boden-Sensoren</b>
+
+![grafik](https://github.com/user-attachments/assets/9f508110-7b9b-4478-9bde-e6e05eebdd9e)
 
 
 ---
