@@ -34,6 +34,7 @@ fz.ptvo_on_off = {
   },
 };
 
+
 const switchTypesList = {
     'switch': 0x00,
     'single click': 0x01,
@@ -164,24 +165,24 @@ const device = {
     zigbeeModel: ['CC.REED'],
     model: 'CC.REED',
     vendor: 'inventwo',
-    description: '[CC2531 Kontakt](https://github.com/inventwo/custom-zigbee)',
+    description: '[Configurable firmware](https://ptvo.info/zigbee-configurable-firmware-features/)',
     fromZigbee: [fz.ignore_basic_report, fz.ptvo_on_off, fz.ptvo_multistate_action, fz.ptvo_on_off_config,],
     toZigbee: [tz.ptvo_switch_trigger, tz.ptvo_on_off_config,],
     exposes: [
-      e.presence().withEndpoint('inStation'),
-      ...ptvo_on_off_config_exposes('inStation'),
+        e.presence().withEndpoint('l1'),
+        ...ptvo_on_off_config_exposes('l1'),
     ],
     meta: {
         multiEndpoint: true,
-        binaryEndpoints: {'inStation': 'presence', }, 
+        binaryEndpoints: {'l1': 'presence', }, 
     },
     endpoint: (device) => {
         return {
-            inStation: 1,
+            l1: 1,
         };
     },
 
-    icon: '/device_icons/custom/US100.png',
+   icon: '/device_icons/custom/US100.png',
 
     configure: async (device, coordinatorEndpoint, logger) => {
       const endpoint = device.getEndpoint(1);
