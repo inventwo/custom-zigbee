@@ -1,17 +1,21 @@
+// Converter for PTVO Custom Zigbee by inventwo
+
 const zigbeeHerdsmanConverters = require('zigbee-herdsman-converters');
 const zigbeeHerdsmanUtils = require('zigbee-herdsman-converters/lib/utils');
 
+const exposes = require('zigbee-herdsman-converters/lib/exposes');
 
-const exposes = zigbeeHerdsmanConverters['exposes'] || require("zigbee-herdsman-converters/lib/exposes");
 const ea = exposes.access;
 const e = exposes.presets;
-const modernExposes = (e.hasOwnProperty('illuminance_lux'))? false: true;
 
-const fz = zigbeeHerdsmanConverters.fromZigbeeConverters || zigbeeHerdsmanConverters.fromZigbee;
-const tz = zigbeeHerdsmanConverters.toZigbeeConverters || zigbeeHerdsmanConverters.toZigbee;
+const fz = zigbeeHerdsmanConverters.fromZigbee;
+const tz = zigbeeHerdsmanConverters.toZigbee;
 
-const ptvo_switch = (zigbeeHerdsmanConverters.findByModel)?zigbeeHerdsmanConverters.findByModel('ptvo.switch'):zigbeeHerdsmanConverters.findByDevice({modelID: 'ptvo.switch'});
-fz.legacy = ptvo_switch.meta.tuyaThermostatPreset;
+const precisionRound = zigbeeHerdsmanUtils.precisionRound;
+
+const tzlocal = {};
+const fzlocal = {};
+
 fz.ptvo_on_off = {
   cluster: 'genOnOff',
   type: ['attributeReport', 'readResponse'],
