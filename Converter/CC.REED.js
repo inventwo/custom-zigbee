@@ -34,7 +34,6 @@ fz.ptvo_on_off = {
     },
 };
 
-
 const switchTypesList = {
     'switch': 0x00,
     'single click': 0x01,
@@ -148,86 +147,6 @@ fz.ptvo_on_off_config = {
     },
 };
 
-fzlocal.ptvo_switch_analog_input= {
-    cluster: 'genAnalogInput',
-    type: ['attributeReport', 'readResponse'],
-    convert: (model, msg, publish, options, meta) => {
-        const payload = {};
-        const channel = msg.endpoint.ID;
-
-        let name = '';
-        if (model.propnames !== undefined && model.propnames(model)[channel].length > 0) 
-            name = zigbeeHerdsmanUtils.postfixWithEndpointName(model.propnames(model)[channel], msg, model, meta);
-        else 
-            name = zigbeeHerdsmanUtils.postfixWithEndpointName('_', msg, model, meta).replace('__', '');
-
-        const endpoint = msg.endpoint;
-        payload[name] = zigbeeHerdsmanUtils.precisionRound(msg.data['presentValue'], 3);
-        
-        const cluster = 'genLevelCtrl';
-        if (endpoint && (endpoint.supportsInputCluster(cluster) || endpoint.supportsOutputCluster(cluster))) {
-            payload[zigbeeHerdsmanUtils.postfixWithEndpointName('brightness', msg, model, meta)] = msg.data['presentValue'];
-        } else if (msg.data.description !== undefined) {
-            const data1 = msg.data['description'];
-            if (data1) {
-                const data2 = data1.split(',');
-                const devid = data2[1];
-                const unit = data2[0];
-                if (devid) {
-                     payload[zigbeeHerdsmanUtils.postfixWithEndpointName('device', msg, model, meta)] = devid;
-                }
-
-                const valRaw = msg.data['presentValue'];
-                if (unit) {
-                    let val = zigbeeHerdsmanUtils.precisionRound(valRaw, 3);
-
-                    const nameLookup = {
-                        C: 'temperature',
-                        '%': 'humidity',
-                        m: 'altitude',
-                        Pa: 'pressure',
-                        ppm: 'quality',
-                        psize: 'particle_size',
-                        V: 'voltage',
-                        A: 'current',
-                        Wh: 'energy',
-                        W: 'power',
-                        Hz: 'frequency',
-                        pf: 'power_factor',
-                        lx: 'illuminance',
-                    };
-
-                    let nameAlt = '';
-                    if (unit === 'A' || unit === 'pf') {
-                        if (valRaw < 1) {
-                            val = zigbeeHerdsmanUtils.precisionRound(valRaw, 3);
-                        }
-                    }
-                    if (unit.startsWith('mcpm') || unit.startsWith('ncpm')) {
-                        const num = unit.substr(4, 1);
-                        nameAlt = num === 'A' ? unit.substr(0, 4) + '10' : unit;
-                        val = zigbeeHerdsmanUtils.precisionRound(valRaw, 2);
-                    } else {
-                        nameAlt = nameLookup[unit];
-                    }
-                    if (nameAlt === undefined) {
-                        const valueIndex = parseInt(unit, 10);
-                        if (!isNaN(valueIndex)) {
-                            nameAlt = 'val' + unit;
-                        }
-                    }
-
-                    if (nameAlt !== undefined) {
-                        payload[zigbeeHerdsmanUtils.postfixWithEndpointName(nameAlt, msg, model, meta)] = val;
-                    }
-                }
-            }
-        }
-        
-        return payload;
-    },
-}
-
 function ptvo_on_off_config_exposes(epName) {
     const features = [];
     features.push(exposes.enum('switch_type', exposes.access.ALL,
@@ -241,44 +160,28 @@ function ptvo_on_off_config_exposes(epName) {
     return features;
 }
 
-//
-//                  Angepasst werden muessen die EP Namen in den Exposes im Device (Mark A)
-//                  sowie die Zuordnung EPName zu EP ID (Mark B) Die müssen zusammen passen, incl. Gross/Kleinschreibung
-//
-
 const device = {
     zigbeeModel: ['CC.REED'],
     model: 'CC.REED',
     vendor: 'inventwo',
     description: '[CC2531 Kontakt](https://github.com/inventwo/custom-zigbee)',
-    fromZigbee: [fz.ignore_basic_report, fzlocal.ptvo_switch_analog_input, fz.ptvo_on_off, fz.ptvo_on_off_config,],
-    toZigbee: [tz.ptvo_switch_trigger, tz.on_off, tz.ptvo_on_off_config,],
-//  MARK A
-   exposes: [
-    e.contact().withEndpoint('Sensor').withDescription('Belegung der Station'),
-    ...ptvo_on_off_config_exposes('Sensor'),
-  ],
-  meta: {
-      multiEndpoint: true,
-      binaryEndpoints: {'Sensor': 'contact', },
+    fromZigbee: [fz.ignore_basic_report, fz.ptvo_on_off, fz.ptvo_on_off_config,],
+    toZigbee: [tz.ptvo_switch_trigger, tz.ptvo_on_off_config,],
+    exposes: [
+        e.contact().withEndpoint('Sensor'),
+        ...ptvo_on_off_config_exposes('Sensor'),
+    ],
+    meta: {
+        multiEndpoint: true,
+        binaryEndpoints: {'Sensor': 'contact', }, 
+    },
+    endpoint: (device) => {
+        return {
+            Sensor: 1,
+        };
+    },
 
-  },
-
-//  MARK B
-
- endpoint: (device) => {
-      return {
-	  Sensor: 1,
-      };
-  },
-
-  propnames: (id) => { 
-      return { 
-          1: '', 
-      };
-  },
-    
-    icon: '/device_icons/custom/US100.png',
+   icon: '/device_icons/custom/US100.png',
 
     configure: async (device, coordinatorEndpoint, logger) => {
       const endpoint = device.getEndpoint(1);
