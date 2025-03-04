@@ -168,16 +168,16 @@ const device = {
     fromZigbee: [fz.ignore_basic_report, fz.ptvo_on_off, fz.ptvo_on_off_config,],
     toZigbee: [tz.ptvo_switch_trigger, tz.ptvo_on_off_config,],
     exposes: [
-        e.contact().withEndpoint('Sensor'),
-        ...ptvo_on_off_config_exposes('Sensor'),
+        e.presence().withEndpoint('Roberta'),
+        ...ptvo_on_off_config_exposes('Roberta'),
     ],
     meta: {
         multiEndpoint: true,
-        binaryEndpoints: {'Sensor': 'contact', }, 
+        binaryEndpoints: {'Roberta': 'presence', }, 
     },
     endpoint: (device) => {
         return {
-            Sensor: 1,
+            Roberta: 1,
         };
     },
 
