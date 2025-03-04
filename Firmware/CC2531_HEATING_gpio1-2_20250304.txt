@@ -1,0 +1,11 @@
+Board-Typ: CC2530 (ohne externen Oszillator, wie CC2531-Dongle oder Sonoff BasicZBR3)
+Gerätetyp: Endgerät ohne Routing
+Herstellername: inventwo
+Modell-ID: CC.HEATING
+Aktualisieren Sie den Zeitstempel der Firmware: 2025-03-04
+Status-LED: P00 (Umgekehrt), Periodisch (alle 5 Sekunden)
+Standard-Berichtsintervall festlegen (S): 10
+
+Ausgangspins:
+P02: Ausgabe 1, DS18B20, Hochziehen (Sensor-ID (optional, Hex): FF-FF-FF-FF-FF-FF-FF-FF, Mode: Single, Automatische Erkennung)
+P03: Ausgabe 2, DS18B20, Hochziehen (Sensor-ID (optional, Hex): FF-FF-FF-FF-FF-FF-FF-FF, Mode: Single, Automatische Erkennung)
