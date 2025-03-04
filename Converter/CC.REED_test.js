@@ -165,7 +165,7 @@ const device = {
     zigbeeModel: ['CC.REED'],
     model: 'CC.REED',
     vendor: 'inventwo',
-    description: '[Configurable firmware](https://ptvo.info/zigbee-configurable-firmware-features/)',
+    description: '[CC2531 Kontakt](https://github.com/inventwo/custom-zigbee)',
     fromZigbee: [fz.ignore_basic_report, fz.ptvo_on_off, fz.ptvo_multistate_action, fz.ptvo_on_off_config,],
     toZigbee: [tz.ptvo_switch_trigger, tz.ptvo_on_off_config,],
     exposes: [
