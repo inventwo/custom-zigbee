@@ -1,28 +1,20 @@
-//                  GREENHOUSE CC2530
-//
-//                  - 1x DS18B20 Bodentemperatur
-//                  - 1x DHT22 Innenraummessung
-//                  - 2x Soil-Sensoren
-//                  - 2x Reed
-//                  - 2x Relais
+// Converter for PTVO Custom Zigbee by inventwo
 
 const zigbeeHerdsmanConverters = require('zigbee-herdsman-converters');
 const zigbeeHerdsmanUtils = require('zigbee-herdsman-converters/lib/utils');
 
-const exposes = zigbeeHerdsmanConverters['exposes'] || require("zigbee-herdsman-converters/lib/exposes");
+const exposes = require('zigbee-herdsman-converters/lib/exposes');
+
 const ea = exposes.access;
 const e = exposes.presets;
-const modernExposes = (e.hasOwnProperty('illuminance_lux'))? false: true;
 
-const fz = zigbeeHerdsmanConverters.fromZigbeeConverters || zigbeeHerdsmanConverters.fromZigbee;
-const tz = zigbeeHerdsmanConverters.toZigbeeConverters || zigbeeHerdsmanConverters.toZigbee;
+const fz = zigbeeHerdsmanConverters.fromZigbee;
+const tz = zigbeeHerdsmanConverters.toZigbee;
+
+const precisionRound = zigbeeHerdsmanUtils.precisionRound;
 
 const tzlocal = {};
 const fzlocal = {};
-
-const ptvo_switch = (zigbeeHerdsmanConverters.findByModel)?zigbeeHerdsmanConverters.findByModel('ptvo.switch'):zigbeeHerdsmanConverters.findByDevice({modelID: 'ptvo.switch'});
-
-fz.legacy = ptvo_switch.meta.tuyaThermostatPreset;
 
 fz.ptvo_on_off = {
     cluster: 'genOnOff',
