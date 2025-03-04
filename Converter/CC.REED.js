@@ -243,7 +243,7 @@ function ptvo_on_off_config_exposes(epName) {
 
 //
 //                  Angepasst werden muessen die EP Namen in den Exposes im Device (Mark A)
-//                  sowie die Zuordnung EPName zu EP ID (Mark B) Die müssen zusammen passen, incl. Gross/Kleinschreibung
+//                  sowie die Zuordnung EPName zu EP ID (Mark B) Die mÃ¼ssen zusammen passen, incl. Gross/Kleinschreibung
 //
 
 const device = {
@@ -255,19 +255,23 @@ const device = {
     toZigbee: [tz.ptvo_switch_trigger, tz.on_off, tz.ptvo_on_off_config,],
 //  MARK A
    exposes: [
-    e.contact().withEndpoint('Sensor').withDescription('Belegung der Station'),
+//    e.contact().withEndpoint('Sensor').withDescription('Belegung der Station'),
+    e.presence().withEndpoint('Roberta').withDescription('Belegung der Station').withPayload('station'),
     ...ptvo_on_off_config_exposes('Sensor'),
   ],
   meta: {
       multiEndpoint: true,
-      binaryEndpoints: {'Sensor': 'contact', },
+//      binaryEndpoints: {'Sensor': 'contact', },
+      binaryEndpoints: {'Roberta': 'presence', },
+
   },
 
 //  MARK B
 
  endpoint: (device) => {
       return {
-          Sensor: 1,
+//          Sensor: 1,
+	  Roberta: 1,
       };
   },
 
