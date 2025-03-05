@@ -27,7 +27,7 @@ color_temp:["fa-sliders-h"],
 illuminance_lux:["fa-sun"],
 soil_moisture:["fa-brands fa-drupal","text-primary"],
 water_leak:["fa-water"],
-//
+// NEW
 approach_distance:["fa-arrows-left-right-to-line","text-warning"],
 detection_distance:["fa-arrows-left-right-to-line","text-warning"],
 distance:["fa-arrows-left-right-to-line","text-warning"],
