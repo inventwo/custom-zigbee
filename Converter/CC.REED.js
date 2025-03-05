@@ -168,7 +168,7 @@ const device = {
     fromZigbee: [fz.ignore_basic_report, fz.ptvo_on_off, fz.ptvo_on_off_config,],
     toZigbee: [tz.ptvo_switch_trigger, tz.ptvo_on_off_config,],
     exposes: [
-        e.presence().withEndpoint('Roberta'),
+        e.presence().withEndpoint('Roberta').withDescription('Belegung der Station'),
         ...ptvo_on_off_config_exposes('Roberta'),
     ],
     meta: {
