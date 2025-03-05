@@ -48,6 +48,11 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
 ![grafik](https://github.com/user-attachments/assets/9f508110-7b9b-4478-9bde-e6e05eebdd9e)
 
 
+• <b>CC2531 mit Reed-Sensor</b>
+
+![grafik](https://github.com/user-attachments/assets/05fc8e1e-a02a-41c5-9167-28a9c90ed107)
+
+
 ---
 
 ## CC2531 pinout:
