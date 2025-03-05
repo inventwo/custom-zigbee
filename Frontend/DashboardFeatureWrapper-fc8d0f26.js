@@ -7,7 +7,7 @@ co2:["fa-atom","text-warning"],
 voltage:["fa-bolt","text-success"],
 brightness:["fa-sun"],
 occupancy:["fa-walking"],
-presence:["fa-person-rays"],
+// presence:["fa-person-rays"],
 current:["fa-copyright","text-warning"],
 power:["fa-power-off","text-success"],
 energy:["fa-plug","text-info"],
@@ -61,7 +61,8 @@ case"detection_distance":n.push(y({"fa-arrows-left-right-to-line text-warning":t
 break;
 case"occupancy":n.push(y({"text-warning":t}));
 break;
-case"presence":n.push(y({"text-warning":t}));
+// case"presence":n.push(y({"text-warning":t}));
+case"presence":n.push(y({"fa-right-to-bracket text-success":t,"fa-right-to-bracket fa-rotate-180 text-danger":!t}));
 break;
 case"tamper":n.push(y({"fa-beat-fade":t}));
 break;
