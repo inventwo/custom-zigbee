@@ -1,0 +1,11 @@
+Board type: CC2530
+Device type: End device without routing
+Manufacturer name: inventwo
+Model ID: CC.VEGETABLE
+Update firmware's timestamp : 2025-03-09
+Status LED: P22, Periodic (every 30 seconds)
+Set default reporting interval (s): 10
+
+Output pins:
+P05: Output 1, ADC (raw value, max 3.3V)
+P07: Output 2, ADC (raw value, max 3.3V)

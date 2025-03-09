@@ -1,0 +1,19 @@
+Board type: CC2530
+Device type: End device without routing
+Manufacturer name: inventwo
+Model ID: CC.GREENHOUSE
+Update firmware's timestamp : 2025-03-09
+Status LED: P22, Periodic (every 30 seconds)
+Set default reporting interval (s): 10
+
+Output pins:
+P21: Output 1, DS18B20, Pull-up (Sensor ID (optional, hex): , Mode: Multiple on bus, Auto-detect)
+P01: Output 2, Temperature sensor (1-wire), External pull-up (Type: DHT22)
+P00: Output 3, ADC (raw value, max 3.3V)
+P02: Output 4, ADC (raw value, max 3.3V)
+P31: Output 5, GPIO (Role: Contact), Remember state
+P32: Output 6, GPIO (Role: Contact), Remember state
+
+Input pins:
+P12: Input 5, GPIO, Pull-up, Switch, Link to out 5 (Bind command: On/Off)
+P13: Input 6, GPIO, Pull-up, Switch, Link to out 6 (Bind command: On/Off)
