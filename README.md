@@ -45,7 +45,7 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
 
 • <b>CC2530 mit Boden-Sensoren</b>
 
-![grafik](https://github.com/user-attachments/assets/9f508110-7b9b-4478-9bde-e6e05eebdd9e)
+![grafik](https://github.com/user-attachments/assets/67152ed0-9dc2-4a26-9dfa-4f2fb623c2aa)
 
 
 • <b>CC2531 mit Reed-Sensor</b>
