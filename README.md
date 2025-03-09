@@ -34,9 +34,10 @@ Bei Fragen und Anregungen, bitte ein Issue eröffnen.
 ![grafik](https://github.com/user-attachments/assets/8175f124-e625-4aec-bae3-f7347f2fcd2f)
 
 
-• <b>CC2530 mit mehreren Sensoren, Kontakten und Relais</b>
+• <b>CC2530 mit mehreren Sensoren und Kontakten</b>
 
-![grafik](https://github.com/user-attachments/assets/b7e2305a-4e79-4fca-b558-dd72fba32b8c)
+![grafik](https://github.com/user-attachments/assets/62c8ddf0-30c9-4a3a-aabf-ecfaf9cc577d)
+
 
 • <b>CC265R1 mit DHT22 Sensoren</b>
 
